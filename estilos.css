@@ -1,9 +1,6 @@
-/* ========================================
-   ESTILOS PERSONALIZADOS BALLET PAS DE DEUX
-   Bootstrap hace el trabajo principal
-   ======================================== */
-
-/* Colores personalizados para la tienda de ballet */
+/* colores para la tienda*/
+/**.bg-ballet-> nombre de la clase de css que puedo ocupar en html*/
+/*background fondo rosa*/
 .bg-ballet {
     background-color: #ef7aa1 !important;
 }
@@ -12,54 +9,61 @@
     color: #ef7aa1;
 }
 
-/* Botones primarios con color rosa ballet */
+
+/* botones principales*/
+/*.btn-primary-> clase del bootstrap para los botones principales  */
 .btn-primary {
     background-color: #ef7aa1;
     border-color: #ef7aa1;
 }
-
+/*hover -> se activa cuando se pasa el mouse sobre el elemento*/
 .btn-primary:hover {
     background-color: #c2185b;
     border-color: #c2185b;
 }
 
-/* Botones outline con color ballet */
+
+
+/* botones outline*/
+/*la accion seria que al pasar el mouse el boton se rellena con rosa*/
 .btn-outline-primary {
     color: #ef7aa1;
     border-color: #ef7aa1;
 }
-
+/*.btn-outline-primary-> botones con solo borde*/
 .btn-outline-primary:hover {
     background-color: #ef7aa1;
     border-color: #ef7aa1;
     color: white;
 }
 
-/* Navbar brand sin subrayado */
+/* navbar brand sin el subrayado */
+/*.navbar-brand h3-> selector que apunta al h3 dentro del .navbar-brand y el margin 0 es para elimina espacios*/
 .navbar-brand h3 {
     margin: 0;
     color: white;
 }
 
-/* Cards con hover simple */
+/* card simple*/
 .card {
     transition: transform 0.3s;
 }
-
+/*animacion suave para las cards*/
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /*mueve el elemento en el eje Y osea vertical y  negativo significa arriba*/
 }
 
-/* Carrito modal simple */
+
+/* carrito simple */
 .carrito-modal {
-    display: none;
-    position: fixed;
-    top: 0;
+    display: none;  /*oculto por defecto*/
+    position: fixed;/*hace que quede fijo*/
+    top: 0;/*Pegado arriba e izquierda */
     left: 0;
-    width: 100%;
+    width: 100%;/*ocupa toda la pantalla*/
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);/*negro con 50% transparencia es como un fondo oscurecido*/
+    z-index: 9999;/*aparece sobre todo lo demas*/
 }
 
 .carrito-contenido {
@@ -68,13 +72,13 @@
     max-width: 500px;
     margin: 50px auto;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px;/*Espacio interno  */
 }
 
 .btn-cerrar {
     background: none;
     border: none;
     font-size: 30px;
-    cursor: pointer;
-    float: right;
+    cursor: pointer;/*la mano cuando se pasa el mouse*/
+    float: right;/*Flota a la derecha */
 }
