@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Ballet Pas de Deux</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ballet">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h3>Ballet Pas de Deux</h3>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="index.html#productos">Productos</a>
+                <a class="nav-link" href="index.html#contacto">Contacto</a>
+                <a class="nav-link" href="#carrito">
+                    <button class="btn btn-light">
+                        Carrito (<span id="contador-carrito">0</span>)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Formulario de Registro -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Logo centrado -->
+                <div class="text-center mb-4">
+                    <h2 class="text-ballet">Crear Cuenta</h2>
+                    <p class="text-muted">Registrate para comprar en nuestra tienda</p>
+                </div>
+
+                <!-- Formulario -->
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <form id="form-registro">
+
+                            <!-- Nombre Completo -->
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre Completo *</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nombre"
+                                    placeholder="Ej: Sofia Cortese"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Correo -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico *</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    placeholder="tu.email@duoc.cl"
+                                    required
+                                >
+                                <small class="form-text text-muted">Solo @duoc.cl, @profesor.duoc.cl o @gmail.com</small>
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña *</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="4-10 caracteres"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Confirmar Contraseña -->
+                            <div class="mb-3">
+                                <label for="password2" class="form-label">Confirmar Contraseña *</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password2"
+                                    placeholder="Repite tu contraseña"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Teléfono (opcional) -->
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="telefono"
+                                    placeholder="+56 9 1234 5678"
+                                >
+                            </div>
+
+                            <!-- Región -->
+                            <div class="mb-3">
+                                <label for="region" class="form-label">Región *</label>
+                                <select class="form-control" id="region" required>
+                                    <option value="">Selecciona una región</option>
+                                    <option value="metropolitana">Región Metropolitana</option>
+                                    <option value="valparaiso">Región de Valparaíso</option>
+                                    <option value="biobio">Región del Biobío</option>
+                                </select>
+                            </div>
+
+                            <!-- Comuna -->
+                            <div class="mb-3">
+                                <label for="comuna" class="form-label">Comuna *</label>
+                                <select class="form-control" id="comuna" required>
+                                    <option value="">Primero selecciona una región</option>
+                                </select>
+                            </div>
+
+                            <!-- Mensaje de errores -->
+                            <div id="errores" class="alert alert-danger" style="display: none;"></div>
+
+                            <!-- Mensaje de éxito -->
+                            <div id="exito" class="alert alert-success" style="display: none;">
+                                ¡Registro exitoso! Redirigiendo al login...
+                            </div>
+
+                            <!-- Botón de registro -->
+                            <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+
+                            <!-- Link a login -->
+                            <div class="text-center mt-3">
+                                <p class="text-muted">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Ballet Pas de Deux</h5>
+                <p>Especialistas en vestuario y calzado de ballet desde el 2018</p>
+                <p>Aparte de especialistas, ex bailarinas estan a cargo!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contacto</h5>
+                <p>📧 info@balletePasDeDeux.cl</p>
+                <p>📱 +56 9 1111 1234</p>
+                <p>📍 Viña del Mar, Chile</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Horario</h5>
+                <p>Lunes a Viernes: 10:00 - 19:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <div class="text-center">
+            <p class="mb-1">&copy; 2025 Ballet Pas de Deux - Todos los derechos estan reservados</p>
+            <p class="mb-0">Desarrollado por Sofía Cortese</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// Obtener elementos del formulario
+const nombre = document.getElementById("nombre")
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+const password2 = document.getElementById("password2")
+const region = document.getElementById("region")
+const comuna = document.getElementById("comuna")
+const form = document.getElementById("form-registro")
+const parrafoErrores = document.getElementById("errores")
+const parrafoExito = document.getElementById("exito")
+
+// Comunas por región (datos simplificados)
+const comunasPorRegion = {
+    metropolitana: ["Santiago", "Providencia", "Las Condes", "Maipú", "Ñuñoa"],
+    valparaiso: ["Valparaíso", "Viña del Mar", "Quilpué", "Villa Alemana"],
+    biobio: ["Concepción", "Talcahuano", "Los Ángeles", "Chillán"]
+}
+
+// Actualizar comunas cuando cambia la región
+region.addEventListener("change", function(){
+    const regionSeleccionada = region.value
+    comuna.innerHTML = '<option value="">Selecciona una comuna</option>'
+
+    if(regionSeleccionada && comunasPorRegion[regionSeleccionada]){
+        comunasPorRegion[regionSeleccionada].forEach(function(nombreComuna){
+            const option = document.createElement("option")
+            option.value = nombreComuna.toLowerCase()
+            option.textContent = nombreComuna
+            comuna.appendChild(option)
+        })
+    }
+})
+
+// Validación del formulario
+form.addEventListener("submit", function(e){
+    e.preventDefault()
+
+    let errores = ""
+    let hayErrores = false
+
+    // Validar nombre (máximo 100 caracteres)
+    if(nombre.value.length === 0){
+        errores += "El nombre es obligatorio <br>"
+        hayErrores = true
+    }
+    if(nombre.value.length > 100){
+        errores += "El nombre no puede tener más de 100 caracteres <br>"
+        hayErrores = true
+    }
+
+    // Validar correo (solo dominios permitidos)
+    const dominiosPermitidos = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"]
+    let correoValido = false
+
+    dominiosPermitidos.forEach(function(dominio){
+        if(email.value.endsWith(dominio)){
+            correoValido = true
+        }
+    })
+
+    if(!correoValido){
+        errores += "Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com <br>"
+        hayErrores = true
+    }
+
+    if(email.value.length > 100){
+        errores += "El correo no puede tener más de 100 caracteres <br>"
+        hayErrores = true
+    }
+
+    // Validar contraseña (4-10 caracteres)
+    if(password.value.length < 4 || password.value.length > 10){
+        errores += "La contraseña debe tener entre 4 y 10 caracteres <br>"
+        hayErrores = true
+    }
+
+    // Validar que las contraseñas coincidan
+    if(password.value !== password2.value){
+        errores += "Las contraseñas no coinciden <br>"
+        hayErrores = true
+    }
+
+    // Validar región
+    if(region.value === ""){
+        errores += "Debes seleccionar una región <br>"
+        hayErrores = true
+    }
+
+    // Validar comuna
+    if(comuna.value === ""){
+        errores += "Debes seleccionar una comuna <br>"
+        hayErrores = true
+    }
+
+    // Mostrar errores o éxito
+    if(hayErrores){
+        parrafoErrores.innerHTML = errores
+        parrafoErrores.style.display = "block"
+        parrafoExito.style.display = "none"
+    } else {
+        parrafoErrores.style.display = "none"
+        parrafoExito.style.display = "block"
+
+        // Simular registro exitoso
+        setTimeout(function(){
+            window.location.href = "login.html"
+        }, 2000)
+    }
+})
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
