@@ -1,9 +1,9 @@
-# macOS
-.DS_Store #Archivo basura que crea macOS automáticamente en cada carpeta
+# macOS Archivo basura que crea macOS automáticamente en cada carpeta
+.DS_Store 
 
-# Editor
+# Editor carpeta de configuración
 .vscode/
-.idea/ # Carpeta de configuración
+.idea/ 
 
 # Logs - todos los archivos que terminen en .log  
 *.log
