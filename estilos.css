@@ -1,0 +1,80 @@
+/* ========================================
+   ESTILOS PERSONALIZADOS BALLET PAS DE DEUX
+   Bootstrap hace el trabajo principal
+   ======================================== */
+
+/* Colores personalizados para la tienda de ballet */
+.bg-ballet {
+    background-color: #ef7aa1 !important;
+}
+
+.text-ballet {
+    color: #ef7aa1;
+}
+
+/* Botones primarios con color rosa ballet */
+.btn-primary {
+    background-color: #ef7aa1;
+    border-color: #ef7aa1;
+}
+
+.btn-primary:hover {
+    background-color: #c2185b;
+    border-color: #c2185b;
+}
+
+/* Botones outline con color ballet */
+.btn-outline-primary {
+    color: #ef7aa1;
+    border-color: #ef7aa1;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ef7aa1;
+    border-color: #ef7aa1;
+    color: white;
+}
+
+/* Navbar brand sin subrayado */
+.navbar-brand h3 {
+    margin: 0;
+    color: white;
+}
+
+/* Cards con hover simple */
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Carrito modal simple */
+.carrito-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.carrito-contenido {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.btn-cerrar {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+}

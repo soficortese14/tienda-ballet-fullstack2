@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballet Pas de Deux - Tienda de Ballet</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS personalizado para colores -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- parte del encabezado con Bootstrap -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-ballet">
+            <div class="container">
+                <!-- logo de la tienda -->
+                <a class="navbar-brand" href="#inicio">
+                    <h3>Ballet Pas de Deux</h3>
+                </a>
+
+                <!-- navegacion -->
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                    <a class="nav-link" href="#productos">Productos</a>
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                    <a class="nav-link" href="#carrito">
+                        <button class="btn btn-light">
+                            Carrito (<span id="contador-carrito">0</span>)
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- seccion de introduccion -->
+    <section class="bg-light py-5" id="inicio">
+        <div class="container text-center">
+            <img src="imagenes/principal.jpg" alt="Principal" class="img-fluid mb-4" style="max-width: 600px;">
+            <h2 class="display-4 text-ballet">Elegancia en cada movimiento que des!</h2>
+            <p class="lead mb-4">Encuentra todo lo que necesitas para tu danza clásica en <strong>Ballet Pas de Deux</strong>.</p>
+            <a href="#productos" class="btn btn-primary btn-lg">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- contenido principal de la tienda-->
+    <main class="main">
+
+        <!-- seccion de productos -->
+        <section class="py-5" id="productos">
+            <div class="container">
+                <h2 class="text-center mb-4 text-ballet">Nuestros Productos</h2>
+
+                <!-- filtros de categoria -->
+                <div class="text-center mb-4">
+                    <button class="btn btn-outline-primary m-1" data-categoria="todos">Todos</button>
+                    <button class="btn btn-outline-primary m-1" data-categoria="mallas">Mallas</button>
+                    <button class="btn btn-outline-primary m-1" data-categoria="zapatillas">Zapatillas</button>
+                    <button class="btn btn-outline-primary m-1" data-categoria="faldas">Faldas</button>
+                    <button class="btn btn-outline-primary m-1" data-categoria="accesorios">Accesorios</button>
+                </div>
+
+                <!-- grid de productos con Bootstrap -->
+                <div class="row" id="productos-grid">
+
+                    <!-- Producto 1: Malla -->
+                    <div class="col-md-4 mb-4" data-categoria="mallas">
+                        <div class="card h-100">
+                            <img src="imagenes/malla_negra.webp" class="card-img-top" alt="Malla ballet negra larga" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Malla Clásica Negra Manga Larga</h5>
+                                <p class="text-muted small">MALLAS</p>
+                                <p class="card-text">Malla térmica de manga larga para clases de invierno.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$25.990</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Malla Clásica Negra', 25990)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2: Zapatillas -->
+                    <div class="col-md-4 mb-4" data-categoria="zapatillas">
+                        <div class="card h-100">
+                            <img src="imagenes/zapatillaPunta.jpg" class="card-img-top" alt="Zapatillas de punta" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Zapatillas de Punta Profesional</h5>
+                                <p class="text-muted small">ZAPATILLAS</p>
+                                <p class="card-text">Zapatillas de punta con caja reforzada para bailarinas avanzadas.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$150.990</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Zapatillas de Punta', 150990)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3: Zapatillas Media Punta -->
+                    <div class="col-md-4 mb-4" data-categoria="zapatillas">
+                        <div class="card h-100">
+                            <img src="imagenes/zapatilaMediaPunta.jpeg" class="card-img-top" alt="Zapatillas media punta" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Zapatillas Media Punta Lona</h5>
+                                <p class="text-muted small">ZAPATILLAS</p>
+                                <p class="card-text">Media punta en lona, ideales para principiantes e intermedios.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$45.000</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Zapatillas Media Punta', 45000)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4: Falda -->
+                    <div class="col-md-4 mb-4" data-categoria="faldas">
+                        <div class="card h-100">
+                            <img src="imagenes/faldaBallet.jpg" class="card-img-top" alt="Falda Rosada" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Falda de Gasa Rosa</h5>
+                                <p class="text-muted small">FALDAS</p>
+                                <p class="card-text">Falda de gasa ligera para prácticas de ballet clásico.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$15.990</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Falda de Gasa Rosa', 15990)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 5: Malla manga corta -->
+                    <div class="col-md-4 mb-4" data-categoria="mallas">
+                        <div class="card h-100">
+                            <img src="imagenes/mallanegraultima.webp" class="card-img-top" alt="Malla corta ballet" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Malla Manga Corta</h5>
+                                <p class="text-muted small">MALLAS</p>
+                                <p class="card-text">Malla elastica de algodon manga corta.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$29.990</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Malla Manga corta', 29990)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 6: Accesorios -->
+                    <div class="col-md-4 mb-4" data-categoria="accesorios">
+                        <div class="card h-100">
+                            <img src="imagenes/accesorios.jpg" class="card-img-top" alt="Accesorios" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Set de Moños y Redecilla</h5>
+                                <p class="text-muted small">ACCESORIOS</p>
+                                <p class="card-text">Pack con 3 moños y redecilla para recogido perfecto.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$8.990</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Set de Moños', 8990)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 7: Polainas -->
+                    <div class="col-md-4 mb-4" data-categoria="accesorios">
+                        <div class="card h-100">
+                            <img src="imagenes/polainas.jpg" class="card-img-top" alt="Polainas Rosada" style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Polainas Rosadas</h5>
+                                <p class="text-muted small">ACCESORIOS</p>
+                                <p class="card-text">Polainas termicas para mantener piernas calientes durante el calentamiento o para toda la clase.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 text-success mb-0">$15.000</span>
+                                    <button class="btn btn-primary" onclick="agregarAlCarrito('Polainas Rosadas', 15000)">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- formulario de contacto con Bootstrap -->
+        <section class="py-5 bg-light" id="contacto">
+            <div class="container">
+                <h2 class="text-center mb-3 text-ballet">Contactanos</h2>
+                <p class="text-center text-muted mb-4">¿Tienes dudas sobre algún producto? Escribenos y te responderemos en brevedad.</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form id="form-contacto" onsubmit="validarFormulario(event)">
+
+                            <!-- Campo: Nombre -->
+                            <div class="form-group mb-3">
+                                <label for="nombre">Nombre completo *</label>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    class="form-control"
+                                    placeholder="Ej: Sofia Cortese"
+                                    autocomplete="name"
+                                    required
+                                >
+                                <small class="form-text text-danger" id="error-nombre"></small>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group mb-3">
+                                <label for="email">Email *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="tu.email@gmail.com"
+                                    autocomplete="email"
+                                    required
+                                >
+                                <small class="form-text text-danger" id="error-email"></small>
+                            </div>
+
+                            <!-- Telefono -->
+                            <div class="form-group mb-3">
+                                <label for="telefono">Teléfono</label>
+                                <input
+                                    type="tel"
+                                    id="telefono"
+                                    name="telefono"
+                                    class="form-control"
+                                    placeholder="+56 9 1234 5678"
+                                    autocomplete="tel"
+                                >
+                            </div>
+
+                            <!-- Asunto -->
+                            <div class="form-group mb-3">
+                                <label for="asunto">Asunto *</label>
+                                <select id="asunto" name="asunto" class="form-control" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="consulta">Consulta sobre productos</option>
+                                    <option value="tallas">Asesoría de tallas</option>
+                                    <option value="envio">Información de envío</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <small class="form-text text-danger" id="error-asunto"></small>
+                            </div>
+
+                            <!--  Mensaje -->
+                            <div class="form-group mb-3">
+                                <label for="mensaje">Mensaje *</label>
+                                <textarea
+                                    id="mensaje"
+                                    name="mensaje"
+                                    rows="5"
+                                    class="form-control"
+                                    placeholder="Escribe tu mensaje aquí..."
+                                    required
+                                    minlength="10"
+                                ></textarea>
+                                <small class="form-text text-danger" id="error-mensaje"></small>
+                            </div>
+
+                            <!-- Boton de envio -->
+                            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+
+                            <!-- mensaje de exito -->
+                            <div class="alert alert-success mt-3" style="display: none;" id="mensaje-exito">
+                                ¡Mensaje enviado con éxito! Te contactaremos pronto.
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer con Bootstrap -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Ballet Pas de Deux</h5>
+                    <p>Especialistas en vestuario y calzado de ballet desde el 2018</p>
+                    <p>Aparte de especialistas, ex bailarinas estan a cargo!</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p>📧 info@balletePasDeDeux.cl</p>
+                    <p>📱 +56 9 1111 1234</p>
+                    <p>📍 Viña del Mar, Chile</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Horario</h5>
+                    <p>Lunes a Viernes: 10:00 - 19:00</p>
+                    <p>Sábados: 10:00 - 14:00</p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="text-center">
+                <p class="mb-1">&copy; 2025 Ballet Pas de Deux - Todos los derechos estan reservados</p>
+                <p class="mb-0">Desarrollado por Sofía Cortese</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- carrito -->
+    <div class="carrito-modal" id="carrito-modal">
+        <div class="carrito-contenido">
+            <div class="carrito-header">
+                <h3>🛒 Tu Carrito</h3>
+                <button class="btn-cerrar" onclick="cerrarCarrito()">✕</button>
+            </div>
+
+            <div class="carrito-items" id="carrito-items">
+                <p class="carrito-vacio">Tu carrito está vacío</p>
+            </div>
+
+            <div class="carrito-total">
+                <strong>Total:</strong>
+                <span id="carrito-total">$0</span>
+            </div>
+
+            <button class="btn-checkout" onclick="procederCheckout()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
