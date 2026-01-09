@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Ballet Pas de Deux</title>
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- navbar (la barra de navegacion) - (nav etiqueta semantica)-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ballet">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h3>Ballet Pas de Deux</h3>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a> 
+                <a class="nav-link" href="index.html#productos">Productos</a>
+                <a class="nav-link" href="index.html#contacto">Contacto</a>
+                <a class="nav-link" href="#carrito">
+                    <button class="btn btn-light">
+                        Carrito (<span id="contador-carrito">0</span>)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- formulario de login -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <!-- Logo y titulo -->
+                <div class="text-center mb-4">
+                    <div style="font-size: 60px;">Bienvenida!</div>
+                    <h2 class="text-ballet mb-2">Iniciar Sesión</h2>
+                    <p class="text-muted">Accede a tu cuenta de Ballet Pas de Deux</p>
+                </div>
+
+                <!-- formulario -->
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <form id="form-login">
+
+                            <!-- correo -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    placeholder="tu.email@duoc.cl"
+                                    required
+                                >
+                            </div>
+
+                            <!-- contraseña -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Ingresa tu contraseña"
+                                    required
+                                >
+                            </div>
+
+                            <!-- msj de errores -->
+                            <div id="errores" class="alert alert-danger" style="display: none;"></div>
+
+                            <!-- msj exito-->
+                            <div id="exito" class="alert alert-success" style="display: none;">
+                                ¡Bienvenida! Redirigiendo...
+                            </div>
+
+                            <!-- btn de login -->
+                            <button type="submit" class="btn btn-primary w-100 mb-3">Iniciar Sesión</button>
+
+                            <!-- linkkk a registro -->
+                            <div class="text-center">
+                                <p class="text-muted mb-0">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- info adicional -->
+                <div class="text-center mt-4">
+                    <small class="text-muted">
+                        Al iniciar sesión, aceptas nuestros términos y condiciones
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Ballet Pas de Deux</h5>
+                <p>Especialistas en vestuario y calzado de ballet desde el 2018</p>
+                <p>Aparte de especialistas, ex bailarinas estan a cargo!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contacto</h5>
+                <p>📧 info@balletePasDeDeux.cl</p>
+                <p>📱 +56 9 1111 1234</p>
+                <p>📍 Viña del Mar, Chile</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Horario</h5>
+                <p>Lunes a Viernes: 10:00 - 19:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <div class="text-center">
+            <p class="mb-1">&copy; 2025 Ballet Pas de Deux - Todos los derechos estan reservados</p>
+            <p class="mb-0">Desarrollado por Sofía Cortese</p>
+        </div>
+    </div>
+</footer>
+
+<!-- javaScript -->
+<script>
+// obtener elementos del formulario
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+const form = document.getElementById("form-login")
+const parrafoErrores = document.getElementById("errores")
+const parrafoExito = document.getElementById("exito")
+
+// validacion del formulario
+form.addEventListener("submit", function(e){
+    e.preventDefault()
+
+    let errores = ""
+    let hayErrores = false
+
+    // validar correo (solo dominios permitidos)
+    const dominiosPermitidos = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"]
+    let correoValido = false
+
+    dominiosPermitidos.forEach(function(dominio){
+        if(email.value.endsWith(dominio)){
+            correoValido = true
+        }
+    })
+
+    if(!correoValido){
+        errores += "Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com <br>"
+        hayErrores = true
+    }
+
+    if(email.value.length === 0){
+        errores += "El correo es obligatorio <br>"
+        hayErrores = true
+    }
+
+    if(email.value.length > 100){
+        errores += "El correo no puede tener más de 100 caracteres <br>"
+        hayErrores = true
+    }
+
+    // validar contraseña (4-10 caracteres)
+    if(password.value.length === 0){
+        errores += "La contraseña es obligatoria <br>"
+        hayErrores = true
+    }
+
+    if(password.value.length < 4 || password.value.length > 10){
+        errores += "La contraseña debe tener entre 4 y 10 caracteres <br>"
+        hayErrores = true
+    }
+
+    // mostrar error o ecito
+    if(hayErrores){
+        parrafoErrores.innerHTML = errores
+        parrafoErrores.style.display = "block"
+        parrafoExito.style.display = "none"
+    } else {
+        parrafoErrores.style.display = "none"
+        parrafoExito.style.display = "block"
+
+        // aqui se simula login exitoso
+        setTimeout(function(){
+            window.location.href = "index.html"
+        }, 1500)
+    }
+})
+</script>
+
+<!-- el bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
