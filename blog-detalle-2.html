@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentación Saludable - Ballet Pas de Deux</title>
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- css personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ballet">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h3>Ballet Pas de Deux</h3>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="index.html#productos">Productos</a>
+                <a class="nav-link" href="blogs.html">Blog</a>
+                <a class="nav-link" href="index.html#contacto">Contacto</a>
+                <a class="nav-link" href="#carrito">
+                    <button class="btn btn-light">
+                        Carrito (<span id="contador-carrito">0</span>)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- contenido -->
+<article class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <!-- breadcrumb -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="blogs.html">Blog</a></li>
+                        <li class="breadcrumb-item active">Alimentación Saludable</li>
+                    </ol>
+                </nav>
+
+                <!-- Titulo -->
+                <h1 class="display-4 text-ballet mb-3">Alimentación Saludable para Bailarinas</h1>
+
+                <!-- Metadatos -->
+                <div class="mb-4">
+                    <span class="badge bg-success">SALUD Y BIENESTAR</span>
+                    <span class="text-muted ms-3">7 de Enero, 2025</span>
+                    <span class="text-muted ms-3">4 min de lectura</span>
+                </div>
+
+                <img src="imagenes/imagen_comida_saludable.jpg" class="img-fluid rounded shadow mb-4" alt="Alimentación saludable">
+
+                <!-- contenido -->
+                <div class="lead mb-4">
+                    <p>
+                        El ballet es una disciplina que requiere fuerza, flexibilidad y resistencia. Para rendir
+                        al máximo, tu cuerpo necesita el combustible adecuado. Una buena alimentación no solo
+                        mejora tu desempeño, sino que también previene lesiones y acelera la recuperación.
+                    </p>
+                </div>
+
+                <h3 class="text-ballet mt-5 mb-3">1. Energía para tu Día</h3>
+                <p>
+                    Las bailarinas necesitan carbohidratos complejos como base energética. Estos se encuentran en:
+                </p>
+                <ul>
+                    <li>Avena y cereales integrales</li>
+                    <li>Arroz integral</li>
+                    <li>Pasta integral</li>
+                    <li>Pan integral</li>
+                    <li>Quinoa</li>
+                </ul>
+                <p>
+                    Consume estos alimentos 2-3 horas antes de clase para tener energía sostenida durante
+                    todo el entrenamiento.
+                </p>
+
+                <h3 class="text-ballet mt-5 mb-3">2. Proteínas para Músculos Fuertes</h3>
+                <p>
+                    La proteína es esencial para reparar y construir músculo. Las bailarinas necesitan entre
+                    1.2 a 1.6 gramos de proteína por kilogramo de peso corporal al día.
+                </p>
+                <p>
+                    <strong>Fuentes de proteína recomendadas:</strong>
+                </p>
+                <ul>
+                    <li>Pollo y pavo</li>
+                    <li>Pescados (salmón, atún)</li>
+                    <li>Huevos</li>
+                    <li>Legumbres (lentejas, garbanzos)</li>
+                    <li>Lácteos bajos en grasa (yogurt griego, quesillo)</li>
+                    <li>Frutos secos (almendras, nueces)</li>
+                </ul>
+
+                <h3 class="text-ballet mt-5 mb-3">3. Hidratación Constante</h3>
+                <p>
+                    El agua es fundamental. La deshidratación puede causar calambres, fatiga y mareos.
+                    <strong>Bebe agua antes, durante y después de cada clase.</strong>
+                </p>
+                <p>
+                    Objetivo diario: entre 2 y 3 litros de agua. Si sudas mucho, puedes agregar bebidas
+                    deportivas con electrolitos para reponer minerales.
+                </p>
+
+                <h3 class="text-ballet mt-5 mb-3">4. Frutas y Verduras: Tus Aliadas</h3>
+                <p>
+                    Las frutas y verduras aportan vitaminas, minerales y antioxidantes que ayudan a la
+                    recuperación muscular y fortalecen tu sistema inmune.
+                </p>
+                <p>
+                    <strong>Especialmente importantes:</strong>
+                </p>
+                <ul>
+                    <li><strong>Plátano:</strong> Potasio para prevenir calambres</li>
+                    <li><strong>Espinaca:</strong> Hierro para energía</li>
+                    <li><strong>Naranjas:</strong> Vitamina C para articulaciones</li>
+                    <li><strong>Berries:</strong> Antioxidantes para recuperación</li>
+                </ul>
+
+                <h3 class="text-ballet mt-5 mb-3">5. Snacks Inteligentes</h3>
+                <p>
+                    Si tienes clases largas o múltiples clases al día, lleva snacks saludables:
+                </p>
+                <ul>
+                    <li>Frutos secos mixtos</li>
+                    <li>Barras de cereal caseras</li>
+                    <li>Frutas frescas (manzana, plátano)</li>
+                    <li>Yogurt natural</li>
+                    <li>Mantequilla de maní con galletas integrales</li>
+                </ul>
+
+                <h3 class="text-ballet mt-5 mb-3">6. Qué Evitar</h3>
+                <p>
+                    Reduce o elimina estos alimentos que afectan tu rendimiento:
+                </p>
+                <ul>
+                    <li>Comida chatarra y frituras</li>
+                    <li>Bebidas azucaradas y gaseosas</li>
+                    <li>Dulces y golosinas procesadas</li>
+                    <li>Comidas muy pesadas antes de clase</li>
+                </ul>
+
+                <!--menu -->
+                <div class="card bg-light mt-5">
+                    <div class="card-body">
+                        <h4 class="text-ballet">📋 Ejemplo de Menú Diario</h4>
+                        <p><strong>Desayuno:</strong> Avena con frutas y un vaso de leche</p>
+                        <p><strong>Colación AM:</strong> Plátano con mantequilla de maní</p>
+                        <p><strong>Almuerzo:</strong> Pollo a la plancha con ensalada y arroz integral</p>
+                        <p><strong>Colación PM:</strong> Yogurt con frutos secos</p>
+                        <p class="mb-0"><strong>Cena:</strong> Pescado al horno con verduras al vapor</p>
+                    </div>
+                </div>
+
+             
+                <div class="alert alert-success mt-5">
+                    <h4>🥗 Consejo Final</h4>
+                    <p class="mb-0">
+                        Recuerda que cada cuerpo es diferente. Estas son recomendaciones generales, pero siempre
+                        es mejor consultar con un nutricionista especializado en deportistas para un plan
+                        personalizado según tus necesidades específicas.
+                    </p>
+                </div>
+
+          
+                <div class="d-flex gap-3 mt-4">
+                    <a href="blogs.html" class="btn btn-outline-primary">← Volver al Blog</a>
+                    <a href="index.html#contacto" class="btn btn-primary">Contáctanos</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Ballet Pas de Deux</h5>
+                <p>Especialistas en vestuario y calzado de ballet desde el 2018</p>
+                <p>Aparte de especialistas, ex bailarinas estan a cargo!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contacto</h5>
+                <p>📧 info@balletePasDeDeux.cl</p>
+                <p>📱 +56 9 1111 1234</p>
+                <p>📍 Viña del Mar, Chile</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Horario</h5>
+                <p>Lunes a Viernes: 10:00 - 19:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <div class="text-center">
+            <p class="mb-1">&copy; 2025 Ballet Pas de Deux - Todos los derechos estan reservados</p>
+            <p class="mb-0">Desarrollado por Sofía Cortese</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

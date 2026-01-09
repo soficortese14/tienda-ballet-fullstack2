@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ballet Pas de Deux</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- css personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!--navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ballet">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h3>Ballet Pas de Deux</h3>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="index.html#productos">Productos</a>
+                <a class="nav-link" href="blogs.html">Blog</a>
+                <a class="nav-link" href="index.html#contacto">Contacto</a>
+                <a class="nav-link" href="#carrito">
+                    <button class="btn btn-light">
+                        Carrito (<span id="contador-carrito">0</span>)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- encabezado del Blog -->
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h1 class="display-4 text-ballet">Blog Ballet Pas de Deux</h1>
+        <p class="lead text-muted">Consejos, guías y noticias del mundo del ballet</p>
+    </div>
+</section>
+
+<!-- listado de Blogs -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+
+            <!-- blog 1: Zapatillas -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="imagenes/zapatillaPunta.jpg" class="card-img-top" alt="Zapatillas de punta" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">GUÍA DE COMPRA</span>
+                        <h3 class="card-title text-ballet">Como Elegir tus Zapatillas de Ballet Perfectas</h3>
+                        <p class="card-text text-muted">
+                            Elegir las zapatillas adecuadas es fundamental para tu desarrollo como bailarina.
+                            Te contamos todo lo que necesitas saber sobre tallas, marcas y cuidados esenciales.
+                        </p>
+                        <p class="text-muted">
+                            <small> 14 de Octubre, 2025 | 5 min de lectura</small>
+                        </p>
+                        <a href="blog-detalle-1.html" class="btn btn-primary">VER CASO</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- blog 2: alimentacion -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="imagenes/principal.jpg" class="card-img-top" alt="Alimentación saludable" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">SALUD Y BIENESTAR</span>
+                        <h3 class="card-title text-ballet">Alimentacion Saludable para Bailarinas</h3>
+                        <p class="card-text text-muted">
+                            La nutrición es clave para mantener la energía y prevenir lesiones. Descubre qué alimentos
+                            te ayudarán a rendir al máximo en cada clase y función.
+                        </p>
+                        <p class="text-muted">
+                            <small>7 de Enero, 2025 | 4 min de lectura</small>
+                        </p>
+                        <a href="blog-detalle-2.html" class="btn btn-primary">VER CASO</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Ballet Pas de Deux</h5>
+                <p>Especialistas en vestuario y calzado de ballet desde el 2018</p>
+                <p>Aparte de especialistas, ex bailarinas estan a cargo!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contacto</h5>
+                <p>📧 info@balletePasDeDeux.cl</p>
+                <p>📱 +56 9 1111 1234</p>
+                <p>📍 Viña del Mar, Chile</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Horario</h5>
+                <p>Lunes a Viernes: 10:00 - 19:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <div class="text-center">
+            <p class="mb-1">&copy; 2025 Ballet Pas de Deux - Todos los derechos estan reservados</p>
+            <p class="mb-0">Desarrollado por Sofía Cortese</p>
+        </div>
+    </div>
+</footer>
+
+<!-- bootstrap javascript-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
