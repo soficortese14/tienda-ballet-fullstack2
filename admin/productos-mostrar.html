@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Producto - Panel Administrador</title>
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- css personalizado -->
+    <link rel="stylesheet" href="../estilos.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ef7aa1 0%, #c2185b 100%);
+            padding: 0;
+        }
+
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            padding: 15px 25px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sidebar .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-left-color: white;
+        }
+
+        .sidebar .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-left-color: white;
+        }
+
+        .admin-header {
+            background: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .info-row {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- menu lateral -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="text-center text-white mb-4 pb-3 border-bottom border-white">
+                        <h4 class="mb-0"></h4>
+                        <small>Admin Panel</small>
+                    </div>
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos-lista.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuarios-lista.html">
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4 pt-3 border-top border-white">
+                            <a class="nav-link" href="../index.html">
+                                Volver a la Tienda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <!-- header -->
+                <div class="admin-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="text-ballet mb-1">Detalle del Producto</h2>
+                        <p class="text-muted mb-0">Información completa del producto seleccionado</p>
+                    </div>
+                    <div>
+                        <a href="productos-editar.html?id=1" class="btn btn-warning">
+                            ✏️ Editar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- detalles del producto -->
+                <div class="row">
+                    <!-- imagen -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <img src="../imagenes/malla.jpg" class="card-img-top" alt="Producto">
+                            <div class="card-body">
+                                <span class="badge bg-success">Activo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="col-md-8 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="text-ballet mb-4">Información General</h3>
+
+                                <div class="info-row">
+                                    <span class="info-label">Código:</span>
+                                    <span class="badge bg-secondary ms-2">P001</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Nombre:</span>
+                                    <span class="ms-2">Malla Clásica Negra Manga Larga</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Descripción:</span>
+                                    <p class="mb-0 mt-2">Malla de ballet clásica en color negro con mangas largas. Cuello redondo y diseño ajustado al cuerpo para máxima comodidad durante la práctica.</p>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Categoría:</span>
+                                    <span class="badge bg-info ms-2">Mallas</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Precio:</span>
+                                    <span class="text-success fw-bold ms-2">$25.990</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Stock Disponible:</span>
+                                    <span class="ms-2">15 unidades</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Stock Crítico:</span>
+                                    <span class="ms-2">5 unidades</span>
+                                    <span class="badge bg-success ms-2">Stock Normal</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Estado:</span>
+                                    <span class="badge bg-success ms-2">Activo</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Fecha de Creación:</span>
+                                    <span class="ms-2">5 de Enero, 2025</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Última Actualización:</span>
+                                    <span class="ms-2">9 de Enero, 2025</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- botones de accion -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="text-ballet mb-3">Acciones</h5>
+                        <div class="d-flex gap-2">
+                            <a href="productos-lista.html" class="btn btn-outline-primary">
+                                ← Volver a la Lista
+                            </a>
+                            <a href="productos-editar.html?id=1" class="btn btn-warning">
+                                ✏️ Editar Producto
+                            </a>
+                            <button class="btn btn-danger" onclick="eliminarProducto()">
+                                Eliminar Producto
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function eliminarProducto() {
+            if(confirm('¿Estás segura de que deseas eliminar este producto?\n\nEsta acción no se puede deshacer.')) {
+                alert('Producto eliminado exitosamente')
+                window.location.href = "productos-lista.html"
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

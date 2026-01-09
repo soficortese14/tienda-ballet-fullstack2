@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Usuario - Panel Administrador</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../estilos.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ef7aa1 0%, #c2185b 100%);
+            padding: 0;
+        }
+
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            padding: 15px 25px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sidebar .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-left-color: white;
+        }
+
+        .sidebar .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-left-color: white;
+        }
+
+        .admin-header {
+            background: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .info-row {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .user-avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #ef7aa1 0%, #c2185b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Menu lateral -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="text-center text-white mb-4 pb-3 border-bottom border-white">
+                        <h4 class="mb-0"></h4>
+                        <small>Admin Panel</small>
+                    </div>
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos-lista.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="usuarios-lista.html">
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4 pt-3 border-top border-white">
+                            <a class="nav-link" href="../index.html">
+                                Volver a la Tienda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <!-- header -->
+                <div class="admin-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="text-ballet mb-1">Detalle del Usuario</h2>
+                        <p class="text-muted mb-0">Información completa del usuario seleccionado</p>
+                    </div>
+                    <div>
+                        <a href="usuarios-editar.html?id=1" class="btn btn-warning">
+                            ✏️ Editar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- detalles del usuario -->
+                <div class="row">
+                    <!--avatar -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="user-avatar mb-3">
+                                    MG
+                                </div>
+                                <h4 class="text-ballet mb-2">Mari Curie</h4>
+                                <span class="badge bg-danger mb-2">Administrador</span>
+                                <br>
+                                <span class="badge bg-success">Activo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--info -->
+                    <div class="col-md-8 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="text-ballet mb-4">Información Personal</h3>
+
+                                <div class="info-row">
+                                    <span class="info-label">RUT:</span>
+                                    <span class="badge bg-secondary ms-2">12.345.678-9</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Nombre Completo:</span>
+                                    <span class="ms-2">María González</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Correo Electrónico:</span>
+                                    <span class="ms-2">maria.gonzalez@duoc.cl</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Teléfono:</span>
+                                    <span class="ms-2">+56912345678</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Rol:</span>
+                                    <span class="badge bg-danger ms-2">Administrador</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Estado:</span>
+                                    <span class="badge bg-success ms-2">Activo</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Fecha de Registro:</span>
+                                    <span class="ms-2">1 de Enero, 2025</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Última Actualización:</span>
+                                    <span class="ms-2">9 de Enero, 2025</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <span class="info-label">Último Acceso:</span>
+                                    <span class="ms-2">9 de Enero, 2025 - 14:30 hrs</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- permisos del rol -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="text-ballet mb-3">Permisos del Rol</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Administrador puede:</h6>
+                                <ul>
+                                    <li>Gestionar productos (crear, editar, eliminar)</li>
+                                    <li>Gestionar usuarios (crear, editar, eliminar)</li>
+                                    <li>Ver todas las ventas</li>
+                                    <li>Acceder a reportes completos</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Administrador NO puede:</h6>
+                                <ul>
+                                    <li>Ninguna restricción</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- btns de acción -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="text-ballet mb-3">Acciones</h5>
+                        <div class="d-flex gap-2">
+                            <a href="usuarios-lista.html" class="btn btn-outline-primary">
+                                ← Volver a la Lista
+                            </a>
+                            <a href="usuarios-editar.html?id=1" class="btn btn-warning">
+                                ✏️ Editar Usuario
+                            </a>
+                            <button class="btn btn-danger" onclick="eliminarUsuario()">
+                                Eliminar Usuario
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- javaScript -->
+    <script>
+        function eliminarUsuario() {
+            if(confirm('¿Estás segura de que deseas eliminar este usuario?\n\nEsta acción no se puede deshacer.')) {
+                alert('Usuario eliminado exitosamente')
+                window.location.href = "usuarios-lista.html"
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

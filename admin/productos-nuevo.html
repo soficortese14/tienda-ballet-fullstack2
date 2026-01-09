@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto - Panel Administrador</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../estilos.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ef7aa1 0%, #c2185b 100%);
+            padding: 0;
+        }
+
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            padding: 15px 25px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sidebar .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-left-color: white;
+        }
+
+        .sidebar .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-left-color: white;
+        }
+
+        .admin-header {
+            background: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--menu -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="text-center text-white mb-4 pb-3 border-bottom border-white">
+                        <h4 class="mb-0"></h4>
+                        <small>Admin Panel</small>
+                    </div>
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos-lista.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuarios-lista.html">
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4 pt-3 border-top border-white">
+                            <a class="nav-link" href="../index.html">
+                                Volver a la Tienda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- contenido-->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <!-- header -->
+                <div class="admin-header">
+                    <h2 class="text-ballet mb-1">Agregar Nuevo Producto</h2>
+                    <p class="text-muted mb-0">Completa el formulario para agregar un producto al catálogo</p>
+                </div>
+
+                <!-- formulario -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="form-producto">
+
+                            <div class="row">
+
+                                <!-- codigo -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="codigo" class="form-label">Codigo del Producto *</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="codigo"
+                                        placeholder="Ej: P001"
+                                        required
+                                    >
+                                    <small class="form-text text-muted">Minimo 3 caracteres</small>
+                                </div>
+
+                                <!-- Nombre -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label">Nombre del Producto *</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nombre"
+                                        placeholder="Ej: Zapatillas de Punta"
+                                        required
+                                    >
+                                    <small class="form-text text-muted">Maximo 100 caracteres</small>
+                                </div>
+
+                            </div>
+
+                            <!-- descripcion -->
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripcion (opcional)</label>
+                                <textarea
+                                    class="form-control"
+                                    id="descripcion"
+                                    rows="3"
+                                    placeholder="Describe las características del producto..."
+                                ></textarea>
+                                <small class="form-text text-muted">Maximo 500 caracteres</small>
+                            </div>
+
+                            <div class="row">
+
+                                <!-- Precio -->
+                                <div class="col-md-4 mb-3">
+                                    <label for="precio" class="form-label">Precio *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input
+                                            type="number"
+                                            class="form-control"
+                                            id="precio"
+                                            placeholder="0"
+                                            step="0.01"
+                                            min="0"
+                                            required
+                                        >
+                                    </div>
+                                    <small class="form-text text-muted">Puede ser 0 (gratis)</small>
+                                </div>
+
+                                <!-- Stock -->
+                                <div class="col-md-4 mb-3">
+                                    <label for="stock" class="form-label">Stock *</label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="stock"
+                                        placeholder="0"
+                                        min="0"
+                                        required
+                                    >
+                                    <small class="form-text text-muted">Solo números enteros</small>
+                                </div>
+
+                                <!-- Stock Critico -->
+                                <div class="col-md-4 mb-3">
+                                    <label for="stock-critico" class="form-label">Stock Crítico (Opcional)</label>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="stock-critico"
+                                        placeholder="5"
+                                        min="0"
+                                    >
+                                    <small class="form-text text-muted">Alerta cuando stock este valor</small>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <!-- Categoria -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="categoria" class="form-label">Categoría *</label>
+                                    <select class="form-control" id="categoria" required>
+                                        <option value="">Selecciona una categoría</option>
+                                        <option value="mallas">Mallas</option>
+                                        <option value="zapatillas">Zapatillas</option>
+                                        <option value="faldas">Faldas</option>
+                                        <option value="accesorios">Accesorios</option>
+                                    </select>
+                                </div>
+
+                                <!-- Imagen -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="imagen" class="form-label">Imagen (opcional)</label>
+                                    <input
+                                        type="file"
+                                        class="form-control"
+                                        id="imagen"
+                                        accept="image/*"
+                                    >
+                                    <small class="form-text text-muted">Formatos: JPG, PNG, WEBP</small>
+                                </div>
+
+                            </div>
+
+                            <!-- Mensajes -->
+                            <div id="errores" class="alert alert-danger" style="display: none;"></div>
+                            <div id="exito" class="alert alert-success" style="display: none;">
+                                ¡Producto agregado exitosamente! Redirigiendo...
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                                <a href="productos-lista.html" class="btn btn-outline-secondary">Cancelar</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Obtener elementos del formulario
+        const codigo = document.getElementById("codigo")
+        const nombre = document.getElementById("nombre")
+        const descripcion = document.getElementById("descripcion")
+        const precio = document.getElementById("precio")
+        const stock = document.getElementById("stock")
+        const stockCritico = document.getElementById("stock-critico")
+        const categoria = document.getElementById("categoria")
+        const form = document.getElementById("form-producto")
+        const parrafoErrores = document.getElementById("errores")
+        const parrafoExito = document.getElementById("exito")
+
+        // Validacion del formulario
+        form.addEventListener("submit", function(e){
+            e.preventDefault()
+
+            let errores = ""
+            let hayErrores = false
+
+            // Validar codigo 
+            if(codigo.value.length < 3){
+                errores += "El código debe tener mínimo 3 caracteres <br>"
+                hayErrores = true
+            }
+
+            // Validar nombre 
+            if(nombre.value.length === 0){
+                errores += "El nombre es obligatorio <br>"
+                hayErrores = true
+            }
+            if(nombre.value.length > 100){
+                errores += "El nombre no puede tener más de 100 caracteres <br>"
+                hayErrores = true
+            }
+
+            // Validar descripcion (opcional, max 500)
+            if(descripcion.value.length > 500){
+                errores += "La descripción no puede tener más de 500 caracteres <br>"
+                hayErrores = true
+            }
+
+            // Validar precio 
+            if(precio.value === "" || precio.value < 0){
+                errores += "El precio debe ser mayor o igual a 0 <br>"
+                hayErrores = true
+            }
+
+            // Validar stock 
+            if(stock.value === ""){
+                errores += "El stock es obligatorio <br>"
+                hayErrores = true
+            }
+            if(stock.value < 0){
+                errores += "El stock no puede ser negativo <br>"
+                hayErrores = true
+            }
+            // Verificar que sea entero
+            if(stock.value !== "" && !Number.isInteger(parseFloat(stock.value))){
+                errores += "El stock debe ser un número entero <br>"
+                hayErrores = true
+            }
+
+            // validar stock critico 
+            if(stockCritico.value !== ""){
+                if(stockCritico.value < 0){
+                    errores += "El stock crítico no puede ser negativo <br>"
+                    hayErrores = true
+                }
+                if(!Number.isInteger(parseFloat(stockCritico.value))){
+                    errores += "El stock crítico debe ser un número entero <br>"
+                    hayErrores = true
+                }
+            }
+
+            // validar categoria
+            if(categoria.value === ""){
+                errores += "Debes seleccionar una categoría <br>"
+                hayErrores = true
+            }
+
+            // muestro errores o exito
+            if(hayErrores){
+                parrafoErrores.innerHTML = errores
+                parrafoErrores.style.display = "block"
+                parrafoExito.style.display = "none"
+            } else {
+                parrafoErrores.style.display = "none"
+                parrafoExito.style.display = "block"
+
+                // simulo el supuesto guardado exitoso
+                setTimeout(function(){
+                    window.location.href = "productos-lista.html"
+                }, 2000)
+            }
+        })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

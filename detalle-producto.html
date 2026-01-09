@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Clásica Negra - Ballet Pas de Deux</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-ballet">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h3>Ballet Pas de Deux</h3>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="index.html#productos">Productos</a>
+                <a class="nav-link" href="blogs.html">Blog</a>
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                <a class="nav-link" href="index.html#contacto">Contacto</a>
+                <a class="nav-link" href="#carrito">
+                    <button class="btn btn-light">
+                        Carrito (<span id="contador-carrito">0</span>)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Breadcrumb -->
+<section class="bg-light py-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="index.html#productos">Productos</a></li>
+                <li class="breadcrumb-item active">Malla Clásica Negra Manga Larga</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Detalle del Producto -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+
+            <!-- Imagen del producto -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <img src="imagenes/malla_negra.webp" class="card-img-top" alt="Malla Clásica Negra">
+                </div>
+            </div>
+
+            <!-- Información del producto -->
+            <div class="col-md-6 mb-4">
+                <h1 class="text-ballet mb-3">Malla Clásica Negra Manga Larga</h1>
+
+                <span class="badge bg-info mb-3">MALLAS</span>
+
+                <h2 class="text-success mb-4">$25.990</h2>
+
+                <div class="mb-4">
+                    <h5>Descripción:</h5>
+                    <p>
+                        Malla térmica de manga larga perfecta para clases de invierno.
+                        Confeccionada en tejido elasticado de alta calidad que permite
+                        total libertad de movimiento. Cuello redondo y diseño ajustado
+                        al cuerpo para destacar tu postura y líneas de ballet.
+                    </p>
+                </div>
+
+                <div class="mb-4">
+                    <h5>Características:</h5>
+                    <ul>
+                        <li>Material: 90% Algodón, 10% Elastano</li>
+                        <li>Manga larga térmica</li>
+                        <li>Cuello redondo</li>
+                        <li>Color: Negro</li>
+                        <li>Tallas disponibles: S, M, L, XL</li>
+                        <li>Cuidado: Lavado a mano o máquina suave</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <span class="badge bg-success">✓ Stock Disponible</span>
+                    <span class="ms-2 text-muted">15 unidades disponibles</span>
+                </div>
+
+                <!-- Selector de talla -->
+                <div class="mb-4">
+                    <label for="talla" class="form-label"><strong>Selecciona tu talla:</strong></label>
+                    <select class="form-select" id="talla" style="max-width: 200px;">
+                        <option value="">Elige una talla</option>
+                        <option value="S">S (Small)</option>
+                        <option value="M" selected>M (Medium)</option>
+                        <option value="L">L (Large)</option>
+                        <option value="XL">XL (Extra Large)</option>
+                    </select>
+                </div>
+
+                <!-- Selector de cantidad -->
+                <div class="mb-4">
+                    <label for="cantidad" class="form-label"><strong>Cantidad:</strong></label>
+                    <div class="input-group" style="max-width: 150px;">
+                        <button class="btn btn-outline-secondary" type="button" onclick="cambiarCantidadDetalle(-1)">-</button>
+                        <input type="number" class="form-control text-center" id="cantidad" value="1" min="1" max="15">
+                        <button class="btn btn-outline-secondary" type="button" onclick="cambiarCantidadDetalle(1)">+</button>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex gap-3 mb-4">
+                    <button class="btn btn-primary btn-lg" onclick="agregarDesdeDetalle()">
+                        🛒 Agregar al Carrito
+                    </button>
+                    <a href="index.html#productos" class="btn btn-outline-secondary btn-lg">
+                        ← Volver a Productos
+                    </a>
+                </div>
+
+                <!-- Info adicional -->
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h6 class="text-ballet">Información de Envío</h6>
+                        <p class="mb-2">📦 Envío gratis en compras sobre $50.000</p>
+                        <p class="mb-2">🚚 Despacho a todo Chile</p>
+                        <p class="mb-0">⏱️ Entrega estimada: 3-5 días hábiles</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Productos Relacionados -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3 class="text-ballet mb-4">Productos Relacionados</h3>
+            </div>
+
+            <!-- Producto relacionado 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/mallanegraultima.webp" class="card-img-top" alt="Malla Manga Corta" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Malla Manga Corta</h5>
+                        <p class="text-muted small">MALLAS</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-success mb-0">$29.990</span>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Malla Manga corta', 29990)">
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto relacionado 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/faldaBallet.jpg" class="card-img-top" alt="Falda de Gasa Rosa" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Falda de Gasa Rosa</h5>
+                        <p class="text-muted small">FALDAS</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-success mb-0">$15.990</span>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Falda de Gasa Rosa', 15990)">
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto relacionado 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="imagenes/polainas.jpg" class="card-img-top" alt="Polainas Rosadas" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Polainas Rosadas</h5>
+                        <p class="text-muted small">ACCESORIOS</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-success mb-0">$15.000</span>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Polainas Rosadas', 15000)">
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Ballet Pas de Deux</h5>
+                <p>Especialistas en vestuario y calzado de ballet desde el 2018</p>
+                <p>Aparte de especialistas, ex bailarinas estan a cargo!</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Contacto</h5>
+                <p>📧 info@balletePasDeDeux.cl</p>
+                <p>📱 +56 9 1111 1234</p>
+                <p>📍 Viña del Mar, Chile</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Horario</h5>
+                <p>Lunes a Viernes: 10:00 - 19:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <div class="text-center">
+            <p class="mb-1">&copy; 2025 Ballet Pas de Deux - Todos los derechos estan reservados</p>
+            <p class="mb-0">Desarrollado por Sofía Cortese</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal del Carrito -->
+<div class="carrito-modal" id="carrito-modal">
+    <div class="carrito-contenido">
+        <div class="carrito-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button class="btn-cerrar" onclick="cerrarCarrito()">✕</button>
+        </div>
+
+        <div class="carrito-items" id="carrito-items">
+            <p class="carrito-vacio">Tu carrito está vacío</p>
+        </div>
+
+        <div class="carrito-total">
+            <strong>Total:</strong>
+            <span id="carrito-total">$0</span>
+        </div>
+
+        <button class="btn-checkout" onclick="procederCheckout()">Proceder al Pago</button>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+<script>
+    // Funciones especificas para la pagina de detalle
+    function cambiarCantidadDetalle(cambio) {
+        const inputCantidad = document.getElementById('cantidad')
+        let nuevaCantidad = parseInt(inputCantidad.value) + cambio
+
+        if(nuevaCantidad < 1) {
+            nuevaCantidad = 1
+        }
+        if(nuevaCantidad > 15) {
+            nuevaCantidad = 15
+            alert('Stock máximo: 15 unidades')
+        }
+
+        inputCantidad.value = nuevaCantidad
+    }
+
+    function agregarDesdeDetalle() {
+        const talla = document.getElementById('talla').value
+        const cantidad = parseInt(document.getElementById('cantidad').value)
+
+        if(!talla) {
+            alert('Por favor selecciona una talla')
+            return
+        }
+
+        const nombreProducto = 'Malla Clásica Negra'
+        const precio = 25990
+
+        // Agregar al carrito la cantidad seleccionada
+        for(let i = 0; i < cantidad; i++) {
+            agregarAlCarrito(nombreProducto, precio)
+        }
+
+        // Mostrar mensaje personalizado
+        if(cantidad === 1) {
+            mostrarNotificacion('1 producto agregado al carrito')
+        } else {
+            mostrarNotificacion(`${cantidad} productos agregados al carrito`)
+        }
+
+        // Resetear cantidad
+        document.getElementById('cantidad').value = 1
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Panel Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../estilos.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ef7aa1 0%, #c2185b 100%);
+            padding: 0;
+        }
+
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            padding: 15px 25px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sidebar .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-left-color: white;
+        }
+
+        .sidebar .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-left-color: white;
+        }
+
+        .admin-header {
+            background: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .table-actions {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--menu-->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="text-center text-white mb-4 pb-3 border-bottom border-white">
+                        <h4 class="mb-0"></h4>
+                        <small>Admin Panel</small>
+                    </div>
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="productos-lista.html">
+                                Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuarios-lista.html">
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4 pt-3 border-top border-white">
+                            <a class="nav-link" href="../index.html">
+                                Volver a la Tienda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <!-- Header -->
+                <div class="admin-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="text-ballet mb-1">Gestión de Productos</h2>
+                        <p class="text-muted mb-0">Administra el catálogo de productos de la tienda</p>
+                    </div>
+                    <div>
+                        <a href="productos-nuevo.html" class="btn btn-primary">
+                            Agregar Producto
+                        </a>
+                    </div>
+                </div>
+
+                <!-- tabla de productos -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Estado</th>
+                                        <th class="text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Producto 1 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P001</span></td>
+                                        <td>Malla Clásica Negra Manga Larga</td>
+                                        <td><span class="badge bg-info">Mallas</span></td>
+                                        <td class="text-success fw-bold">$25.990</td>
+                                        <td>15</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=1" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=1" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(1)">🗑️</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Producto 2 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P002</span></td>
+                                        <td>Zapatillas de Punta Profesional</td>
+                                        <td><span class="badge bg-primary">Zapatillas</span></td>
+                                        <td class="text-success fw-bold">$150.990</td>
+                                        <td>8</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=2" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=2" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(2)">🗑️</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Producto 3 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P003</span></td>
+                                        <td>Zapatillas Media Punta Lona</td>
+                                        <td><span class="badge bg-primary">Zapatillas</span></td>
+                                        <td class="text-success fw-bold">$45.000</td>
+                                        <td>20</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=3" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=3" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(3)">🗑️</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Producto 4 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P004</span></td>
+                                        <td>Falda de Gasa Rosa</td>
+                                        <td><span class="badge bg-warning">Faldas</span></td>
+                                        <td class="text-success fw-bold">$15.990</td>
+                                        <td>12</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=4" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=4" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(4)">🗑️</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Producto 5 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P005</span></td>
+                                        <td>Malla Manga Corta</td>
+                                        <td><span class="badge bg-info">Mallas</span></td>
+                                        <td class="text-success fw-bold">$29.990</td>
+                                        <td>18</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=5" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=5" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(5)">🗑️</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Producto 6 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P006</span></td>
+                                        <td>Set de Moños y Redecilla</td>
+                                        <td><span class="badge bg-success">Accesorios</span></td>
+                                        <td class="text-success fw-bold">$8.990</td>
+                                        <td>25</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=6" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=6" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(6)">🗑️</button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Producto 7 -->
+                                    <tr>
+                                        <td><span class="badge bg-secondary">P007</span></td>
+                                        <td>Polainas Rosadas</td>
+                                        <td><span class="badge bg-success">Accesorios</span></td>
+                                        <td class="text-success fw-bold">$15.000</td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-success">Activo</span></td>
+                                        <td class="table-actions text-center">
+                                            <a href="productos-mostrar.html?id=7" class="btn btn-sm btn-info" title="Ver">👁️</a>
+                                            <a href="productos-editar.html?id=7" class="btn btn-sm btn-warning" title="Editar">✏️</a>
+                                            <button class="btn btn-sm btn-danger" title="Eliminar" onclick="eliminarProducto(7)">🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Resumen -->
+                        <div class="mt-3 p-3 bg-light rounded">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <strong>Total de productos:</strong> 7
+                                </div>
+                                <div class="col-md-4">
+                                    <strong>Productos activos:</strong> 7
+                                </div>
+                                <div class="col-md-4">
+                                    <strong>Stock total:</strong> 108 unidades
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- javaScriptt -->
+    <script>
+        function eliminarProducto(id) {
+            if(confirm('¿Estás segura de que deseas eliminar este producto?\n\nEsta acción no se puede deshacer.')) {
+                alert('Producto ' + id + ' eliminado exitosamente')
+               
+            }
+        }
+    </script>
+
+    <!-- bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
