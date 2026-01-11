@@ -45,8 +45,8 @@
                 </div>
 
                 <!-- formulario -->
-                <div class="card shadow">
-                    <div class="card-body p-4">
+                <div class="card shadow"> <!--card: caja blanca con bordes redondeados y shadow: sombra suave (son componenete y clase bootstrap)-->
+                    <div class="card-body p-4"> <!--card body:contenido interno de la card y p4:padding tamaño 4 en todos los lados-->
                         <form id="form-registro">
 
                             <!-- nombre completo -->
@@ -184,7 +184,7 @@
 <!------------------------ javaScript ----------------------->
 <script>
 // obtener los elementos del formulario
-const nombre = document.getElementById("nombre")
+const nombre = document.getElementById("nombre") //esto slecciona un elemento HTML por su ID y lo guarda en una variable. (document es todo el html)
 const email = document.getElementById("email")
 const password = document.getElementById("password")
 const password2 = document.getElementById("password2")
@@ -202,7 +202,7 @@ const comunasPorRegion = {
 }
 
 // actualizar comunas cuando se cambia la region
-region.addEventListener("change", function(){
+region.addEventListener("change", function(){ //escucha cuando el usuario cambia la seleccion del select de region y ejecuta una funcion
     const regionSeleccionada = region.value
     comuna.innerHTML = '<option value="">Selecciona una comuna</option>'
 
