@@ -1,3 +1,5 @@
+//el localstorage es como un almacen en el navegador donde se puede guardar informacion . es ideal para el carrito
+//document. busca elementos ya q representa la pagina de html
 // Array para almacenar productos del carrito
 let carrito = []
 
@@ -50,7 +52,7 @@ function cambiarCantidad(nombre, cantidad) {
     const producto = carrito.find(item => item.nombre === nombre)
 
     if(producto){
-        producto.cantidad = parseInt(cantidad)
+        producto.cantidad = parseInt(cantidad) //parseint convierte un string a un num entero
 
         if(producto.cantidad <= 0){
             eliminarDelCarrito(nombre)
