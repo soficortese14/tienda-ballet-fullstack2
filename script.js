@@ -27,7 +27,7 @@ function agregarAlCarrito(nombre, precio) {
     if(productoExistente){
         productoExistente.cantidad += 1
     } else {
-        carrito.push({
+        carrito.push({ //push : metodo que agrega elementos al final de un array
             nombre: nombre,
             precio: precio,
             cantidad: 1
